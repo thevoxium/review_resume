@@ -1,6 +1,6 @@
 import streamlit as st
 import pdfplumber
-from model import model_call
+from model import model_call_suggest_job, model_call_critic
 
 
 def main():
@@ -19,7 +19,10 @@ def main():
         
         job_role = st.text_input("Profile you are applying for..", "")
         if len (job_role) > 0:
-            st.markdown(model_call(text, job_role), unsafe_allow_html = True)
+            
+            st.markdown(model_call_suggest_job(text), unsafe_allow_html = True)
+
+            st.markdown(model_call_critic(text, job_role), unsafe_allow_html = True)
 
 if __name__ == "__main__":
     main()
