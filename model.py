@@ -32,7 +32,7 @@ def model_call_critic(prompt, job_role):
 
 def model_call_suggest_job(prompt):
 
-    sys_prompt = "You will be provided the content of a resume, you need to return a list in the form of bullet points of all the profiles, domain, and roles the candidate's resume is suitable for."
+    sys_prompt = "You will be provided the content of a resume, you need to return a list in the form of bullet points of all the profiles, domain, and roles the candidate's resume is suitable for. Output the list in proper markdown format."
     chat_completion = client.chat.completions.create(
         messages=[
             {
