@@ -1,9 +1,9 @@
 import os
-
+import streamlit as st
 from groq import Groq
 
 client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY"),
+    api_key=st.secrets["GROQ_API_KEY"],
 )
 
 #Always return a response in JSON format. No additonal response should be there apart from JSON. JSON should have Review, Score, Suggestions, Good, & Bad fields. 
